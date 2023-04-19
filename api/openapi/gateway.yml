@@ -1,0 +1,30 @@
+openapi: "3.0.3"
+info:
+  version: 1.0.0
+  title: TBot V1
+  contact:
+    name: breedish@gmail.com
+servers:
+  - url: https://{hostname}/api/bot/v1
+    variables:
+      hostname:
+        default: localhost
+paths:
+  /api/bot/v1/actuator/health:
+    get:
+      operationId: doHealthCheck
+      description: Perform services health check
+      responses:
+        '200':
+          description: 'Up and running'
+        '400':
+          description: 'Down'
+  /api/bot/v1/billing/events/apple:
+    get:
+      operationId: handleAppleBillingEvent
+      description: Handle apple billing event
+      responses:
+        '200':
+          description: 'Processed'
+        '400':
+          description: 'Failure'

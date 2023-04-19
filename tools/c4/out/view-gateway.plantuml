@@ -1,0 +1,74 @@
+This diagram has been generated with go-structurizr 
+[https://github.com/krzysztofreczek/go-structurizr]
+
+@startuml
+
+title Service components
+
+skinparam {
+  shadowing false
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+hide stereotype
+top to bottom direction
+
+scale 4096 width
+
+skinparam rectangle<<_GROUP>> {
+  FontColor #ffffff
+  BorderColor #ffffff
+}
+
+skinparam database<<DB>> {
+  BackgroundColor #c8c8c8
+  FontColor #000000
+  BorderColor #000000
+}
+
+skinparam rectangle<<ROOT>> {
+  BackgroundColor #ffffff
+  FontColor #000000
+  BorderColor #000000
+}
+
+skinparam rectangle<<APP>> {
+  BackgroundColor #1a4577
+  FontColor #ffffff
+  BorderColor #000000
+}
+
+skinparam rectangle<<ADAPTER>> {
+  BackgroundColor #2d69b7
+  FontColor #ffffff
+  BorderColor #000000
+}
+
+skinparam rectangle<<DOMAIN>> {
+  BackgroundColor #ffffff
+  FontColor #000000
+  BorderColor #000000
+}
+
+rectangle 0ROOT <<_GROUP>> {
+	rectangle "==app.Queries\n<size:10>[component]</size>\n\napplication context" <<ROOT>> as 3108248279
+}
+rectangle 0ROOT <<_GROUP>> {
+	rectangle "==app.ApplicationUseCases\n<size:10>[component]</size>\n\napplication context" <<ROOT>> as 1019694165
+}
+rectangle 0ROOT <<_GROUP>> {
+	rectangle "==app.Commands\n<size:10>[component]</size>\n\napplication context" <<ROOT>> as 1401242607
+}
+1019694165 .[#000000].> 1401242607 : ""
+1019694165 .[#000000].> 3108248279 : ""
+rectangle 14012426071APP <<_GROUP>> {
+	rectangle "==command.billingAppleCommandHandler\n<size:10>[component]</size>\n\napplication command" <<APP>> as 1683450377
+}
+1401242607 .[#000000].> 1683450377 : ""
+rectangle 16834503772ADAPTER <<_GROUP>> {
+	rectangle "==services.BillingGatewayImpl\n<size:10>[component]</size>\n\nadapter component" <<ADAPTER>> as 2175927765
+}
+1683450377 .[#000000].> 2175927765 : ""
+@enduml

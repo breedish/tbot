@@ -1,9 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Go template
 # Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
+main
 
 # Test binary, built with `go test -c`
 *.test
@@ -12,4 +15,32 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
+
+# Tools
+.idea
+
+.terraform
+*.tfstate
+*.tfstate.*backup
+terraform/.env
+terraform/cloud-builders-community
+
+/web/src/repositories/clients/*
+!/web/src/repositories/clients/trainer/src/
+!/web/src/repositories/clients/trainings/src/
+!/web/src/repositories/clients/users/src/
+
+/service-account-file.json
+
+.go/
+.go-cache/
+
+bin/*
+
+# Profiling artifacts.
+cpu.*.prof
+heap.prof
+mutex.prof
+# Testing artifacts
+meta.*.test

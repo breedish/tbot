@@ -1,0 +1,62 @@
+configuration:
+  pkgs:
+    - "gitlab.severex.io"
+
+rules:
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/app$"
+    component:
+      description: "application context"
+      tags:
+        - ROOT
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/app/command*"
+    component:
+      description: "application command"
+      tags:
+        - APP
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/app/query"
+    component:
+      description: "application query"
+      tags:
+        - APP
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/app/.*"
+    component:
+      description: "application component"
+      tags:
+        - APP
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/services/.*"
+    component:
+      description: "application services"
+      tags:
+        - APP
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/ports/.*"
+    component:
+      description: "application ports component"
+      tags:
+        - APP
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/domain/.*"
+    component:
+      description: "domain component"
+      tags:
+        - DOMAIN
+  - name_regexp: ".*"
+    pkg_regexps:
+      - ".*/adapters"
+    component:
+      description: "adapter component"
+      tags:
+        - ADAPTER
+
