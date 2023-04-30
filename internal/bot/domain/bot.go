@@ -15,7 +15,7 @@ type bot struct {
 	State    BotState
 	Settings Settings
 	Grid     Grid
-	History  []HistoryEvent
+	History  []HistoryEntry
 }
 
 type Settings struct {
@@ -76,7 +76,7 @@ const (
 	Completed
 )
 
-type HistoryEvent struct {
+type HistoryEntry struct {
 	Epoch time.Time
 	State BotState
 	Quote float32
