@@ -15,6 +15,10 @@ type ExchangeInfo struct {
 	Epoch time.Time
 }
 
+func NewExchange() Exchange {
+	return &mockExchange{}
+}
+
 type mockExchange struct {
 }
 
